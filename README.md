@@ -1,23 +1,23 @@
 # cloudformation-docker-provisioning
 
 ## TLDR: 
-Create a CloudFormation stack, install docker on it, and copies the config 
+Create a CloudFormation stack, install docker on it, and copy the config 
 into your local directory.
 
 ## Why?
 
-AWS CloudFormation provides a declarative template-based way to declare 
-your infrastructure within code. This project provides a setup together with docker
-in one single script `provision.sh`.
+AWS CloudFormation provides a declarative template-based way to describe 
+your infrastructure within code. This project provides a setup of a stack which
+includes an EC2 instance functioning as docker host in one single script `provision.sh`.
 
 ## Prerequisites
 
 This project assumes you have your AWS setup done (e.g. using `~/.aws` or aws-vault), 
 so that you are have the rights to launch an EC2 instance. 
 Depending on your CloudFormation template, you might need more access rights.
-Warning: Starting a machine can imply costs.  
+Warning: Starting EC2 instances can imply costs.  
 
-This assumes that you have `docker`, `docker-machine`, `python`, and `aws` installed.
+This project also assumes that you have `docker`, `docker-machine`, `python`, and `aws` installed.
 
 ## Getting started
 
@@ -32,7 +32,7 @@ Example:
 `<STACK_NAME>` refers to your desired CloudFormation stack name. 
 `<CLOUDFORMATION_TEMPLATE>` is the path to your CloudFormation template.
 
-To source the docker environment variables in your shell, run: 
+After that, to source the docker environment variables in your shell, run: 
     
     eval $(src/env.sh <STACK_NAME>)
 

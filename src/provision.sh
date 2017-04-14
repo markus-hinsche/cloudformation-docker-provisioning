@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Create a CloudFormation stack, install docker on it, and copies the config into your local directory
+# Create a CloudFormation stack, install docker on it, and copy the config into your local directory
 
 set -euo pipefail
 set -x
